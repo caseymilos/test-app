@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <div class="margin-right">
+    <h2
+      [routerLink]="['']"
+      routerLinkActive="is-active"
+      style="cursor: pointer"
+    >
+      Home
+    </h2>
+  </div>
+
+  <div class="margin-right">
+    <a mat-button [routerLink]="['/results']" routerLinkActive="is-active"
+      >Results</a
+    >
+  </div>
+</mat-toolbar>
+<ng-content></ng-content>

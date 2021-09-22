@@ -1,0 +1,36 @@
+<mat-card class="card-container">
+  <mat-card-content>
+    <form [formGroup]="form" (submit)="saveAnswer()">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Which smartphone do you own?</mat-label>
+        <mat-select formControlName="smartphone">
+          <mat-option
+            *ngFor="let smartphone of smartphoneQuestions"
+            value="{{ smartphone.id }}"
+            >{{ smartphone.question }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>How do you travel most regularly?</mat-label>
+        <mat-select formControlName="transport">
+          <mat-option
+            *ngFor="let transport of transportQuestions"
+            value="{{ transport.id }}"
+            >{{ transport.question }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <div class="flex">
+        <div class="spacer"></div>
+        <button [disabled]="!form.valid" mat-button color="primary">
+          Save
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
